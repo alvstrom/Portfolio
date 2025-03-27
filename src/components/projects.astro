@@ -1,38 +1,30 @@
 ---
-import { Image } from "astro:assets";
-//import fincasino from "../../public/fincasino.png";
-//import ecoware from "../../public/ecoware.png";
-//import cashwise from "../../public/cashwise.png";
-import beneathethefjords from "../../public/beneaththefjords.png";
-
 interface Project {
   title: string;
-  image: ImageMetadata;
+  image: string; // Updated to use string for direct URL paths
   link: string;
   preview: string;
   status: string;
 }
 
-//test comment
-
 const projects: Project[] = [
   {
     title: "Placeholder",
-    image: beneathethefjords as ImageMetadata,
+    image: "/beneaththefjords.png", // Direct path to the image in the public folder
     link: "",
     preview: "",
     status: "On Development",
   },
   {
     title: "Placeholder2",
-    image: beneathethefjords as ImageMetadata,
+    image: "/beneaththefjords.png", // Direct path to the image in the public folder
     link: "",
     preview: "",
     status: "On Development",
   },
   {
     title: "Placeholder3",
-    image: beneathethefjords as ImageMetadata,
+    image: "/beneaththefjords.png", // Direct path to the image in the public folder
     link: "",
     preview: "",
     status: "Contributor",
@@ -59,7 +51,7 @@ const projects: Project[] = [
               class="block"
             >
               <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4">
-                <Image
+                <img
                   src={project.image}
                   alt={project.title}
                   class="w-full h-48 md:h-72 object-cover group-hover:scale-105 transition-transform duration-300"
