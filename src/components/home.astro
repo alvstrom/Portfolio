@@ -16,13 +16,13 @@ import SkillsList from "../React/SkillsList.tsx";
         <h1
           class="text-[var(--white)] text-5xl md:text-6xl font-medium text-pretty leading-none"
         >
-          Software <br /> Developer
+          Full Stack <br /> Student
         </h1>
         <p class="text-md md:text-2xl text-[var(--white-icon)]">
-          Transforming ideas into interactive and seamless digital experiences
-          with cutting-edge <span class="text-[var(--sec)] shiny-sec"
-            >frontend</span
-          > development.
+          Passionate about creating innovative solutions through code. Currently
+          pursuing my IT studies in Helsinki, focusing on <span
+            class="text-[var(--sec)] shiny-sec">software development</span
+          > and building modern web applications.
         </p>
       </div>
       <div class="flex justify-start gap-2 pt-3 md:pt-6">
@@ -90,7 +90,7 @@ import SkillsList from "../React/SkillsList.tsx";
       >
         <LetterGlitch
           client:load
-          glitchColors={["#5e4491", "#A476FF", "#241a38"]}
+          glitchColors={["#0a0a0a", "#fb923c", "#1a1f1e"]}
           glitchSpeed={33}
           centerVignette={false}
           outerVignette={true}
@@ -98,12 +98,34 @@ import SkillsList from "../React/SkillsList.tsx";
         />
       </div>
     </div>
+
+    <div class="mt-12 space-y-6">
+      <h2 class="text-2xl font-semibold text-[var(--white)]">Education</h2>
+      <div class="space-y-4">
+        <div
+          class="flex flex-col md:flex-row md:items-center justify-between gap-2 p-4 rounded-xl bg-[var(--white-icon-tr)] border border-[var(--white-icon)]"
+        >
+          <div>
+            <h3 class="text-lg font-medium text-[var(--white)]">
+              Bachelor of Engineering in Information Technology
+            </h3>
+            <p class="text-[var(--white-icon)]">
+              Arcada UAS, Helsinki, Finland
+            </p>
+          </div>
+          <div class="text-right">
+            <p class="text-[var(--white)]">2023 - Present</p>
+            <p class="text-[var(--white-icon)]">Second Year Student</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <style is:global>
   .shiny-sec {
-    background: linear-gradient(135deg, #a476ff 25%, #eee5ff 50%, #a476ff 75%);
+    background: linear-gradient(135deg, #fb923c 25%, #fcd34d 50%, #fb923c 75%);
     background-size: 400% 100%;
     -webkit-background-clip: text;
     background-clip: text;

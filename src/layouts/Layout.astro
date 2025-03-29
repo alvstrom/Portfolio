@@ -1,4 +1,6 @@
 ---
+import ThemeToggle from "../React/ThemeToggle.tsx";
+
 interface Props {
   title: string;
 }
@@ -7,12 +9,12 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Software Developer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta property="og:title" content="Alvin Ström" />
     <meta property="og:description" content="Software Developer" />
     <meta
@@ -28,40 +30,64 @@ const { title } = Astro.props;
     <link
       rel="preload"
       as="style"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       media="print"
       onload="this.media='all'"
     />
     <noscript>
       <link
         rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       />
     </noscript>
 
     <title>{title}</title>
   </head>
   <body class="bg-[--background] md:px-48 lg:px-20 px-9">
-    <slot />
+    <div
+      class="fixed top-0 left-0 right-0 z-[200] bg-[var(--sec)] text-[var(--background)] text-center py-2 text-sm font-medium"
+    >
+      🚧 Site under construction - New features and fixes coming soon! 🚧
+    </div>
+    <div class="pt-10">
+      <ThemeToggle client:load />
+      <slot />
+    </div>
   </body>
 </html>
 
 <style is:global>
   :root {
-    --background: #101010;
-    --sec: #a476ff;
-    --white: #dfdfdf;
-    --white-icon: #f3f3f398;
-    --white-icon-tr: #f3f3f310;
+    --background: #1a1f1e;
+    --sec: #fb923c;
+    --white: #e2e8f0;
+    --white-icon: #94a3b8;
+    --white-icon-tr: #1e293b;
+  }
+
+  :root.dark {
+    --background: #0a0a0a;
+    --sec: #fb923c;
+    --white: #e2e8f0;
+    --white-icon: #94a3b8;
+    --white-icon-tr: #1e293b;
+  }
+
+  :root:not(.dark) {
+    --background: #ffffff;
+    --sec: #f97316;
+    --white: #1a1f1e;
+    --white-icon: #64748b;
+    --white-icon-tr: #f1f5f9;
   }
 
   * {
     font-family:
-      "montserrat",
+      "Atkinson Hyperlegible",
       -apple-system,
       system-ui,
       sans-serif;
