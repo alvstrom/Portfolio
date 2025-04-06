@@ -49,11 +49,22 @@ const { title } = Astro.props;
   </head>
   <body class="bg-[--background] md:px-48 lg:px-20 px-9">
     <div
-      class="fixed top-0 left-0 right-0 z-[200] bg-[var(--sec)] text-[var(--background)] text-center py-2 text-sm font-medium"
+      class="fixed inset-0 bg-[var(--background)] z-[999] flex flex-col items-center justify-center p-4 text-center"
     >
-      🚧 Site under construction - New features and fixes coming soon! 🚧
+      <div class="text-4xl md:text-6xl font-bold text-[var(--sec)] mb-4">
+        🚧
+      </div>
+      <h1 class="text-2xl md:text-3xl font-bold text-[var(--white)] mb-4">
+        Site Under Construction
+      </h1>
+      <p class="text-lg text-[var(--white-icon)] max-w-md">
+        I'm currently working on some exciting updates! Please check back soon.
+      </p>
+      <div class="mt-8 text-sm text-[var(--white-icon)]">
+        <p>Expected completion: Early 2024</p>
+      </div>
     </div>
-    <div class="pt-10">
+    <div class="hidden">
       <ThemeToggle client:load />
       <slot />
     </div>
